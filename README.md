@@ -3,6 +3,9 @@
 ## Link to the deployed application
 https://kbjss071.github.io/README-generator/
 
+![Command Line](./media/Capture.PNG)
+![Preview of markdown](./media/Capture2.PNG)
+
 <hr>
 
 ## To-do list
