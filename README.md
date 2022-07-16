@@ -17,3 +17,14 @@ https://kbjss071.github.io/README-generator/
 <hr>
 
 ## Works done in this project
+- Created `index.js` and `generateMarkdown.js` file to prompt user to enter repository data and generate README.md for the repository.
+- In `index.js`:
+    - created questions to prompt user to provide information of the repository
+    - created functions `writeToFile` and `init` to write a README.md in a currently working directory.
+
+- In `generateMarkdown.js`:
+    - created functions `renderLicenseBadge(license)`, `renderLicenseLink(license)`, `renderLicenseSection(lincese)` to make a badge for license, reference to license section in the markdown, words in the license section.
+    - created a function `generateMarkdown(data)` to receive data passed by user and generate a markdown file with some structures and given data.
+- Created a `.gitignore` which includes `node_modules/` and `.DS_Store/` in order to avoid uplaoding those files to GitHub repository.
+- Included a video to introduce how to use the application.
+- Added screenshots which includes necessary information to let people who has not been introduce to the application understand the purpose and function of it.
