@@ -3,6 +3,9 @@
 ## Link to the deployed application
 https://kbjss071.github.io/README-generator/
 
+- Link to Walkthrough video
+https://drive.google.com/file/d/1A34QNBeK8sz49LSHFFjF5pFQQGVnnCVP/view
+
 ![Command Line](./media/Capture.PNG)
 ![Preview of markdown](./media/Capture2.PNG)
 
