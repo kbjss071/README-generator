@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license !== 'None') {
     // If license is provided, it will create an element in the table content and the element is linked to license section as it is clicked.
-    return `\n  * [License](#license)\n`;
+    return `\n  - [License](#license)\n`;
   }
   //Otherwise, return nothing (nothing will be created)
   return '';
@@ -32,62 +32,62 @@ function renderLicenseSection(license) {
 }
 
 // Create a function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(response) {
   // Lines below will be texts of README.md
-  return `# ${data.title}
-  ${renderLicenseBadge(data.license)}
+  return `# ${response.projectName}
+  ${renderLicenseBadge(response.license)}
 
   ## Description
   
-  ${data.description}
+  ${response.description}
   
   ## Table of Contents 
   
-  * [Installation](#installation)
+  - [Installation](#installation)
   
-  * [Usage](#usage)
-  ${renderLicenseLink(data.license)}
-  * [Contributing](#contributing)
+  - [Usage](#usage)
+  ${renderLicenseLink(response.license)}
+  - [Contributing](#contributing)
   
-  * [Tests](#tests)
+  - [Tests](#tests)
   
-  * [Questions](#questions)
+  - [Questions](#questions)
   
   ## Installation
   
-  To install necessary dependencies, run the following command:
+  Run the following command in order to install necessary dependencies:
   
   \`\`\`
-  ${data.installation}
+  ${response.installation}
   \`\`\`
   
   ## Usage
   
-  ${data.usage}
+  ${response.usage}
   
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(response.license)}
 
-  ${renderLicenseBadge(data.license)}
+  ${renderLicenseBadge(response.license)}
 
     
   ## Contributing
   
-  ${data.contributing}
+  ${response.contributing}
   
   ## Tests
   
-  To run tests, run the following command:
+  Run the following command to test your repo:
   
   \`\`\`
-  ${data.test}
+  ${response.test}
   \`\`\`
   
   ## Questions
   
-  If you have any questions about the repo, open an issue or contact me directly at my email address ${data.email}.
+  If you have any questions about the repo, open an issue or contact me directly at my email address ${response.email}.
   
-  You can find more of my work at [${data.github}](https://github.com/${
-      data.github
+  More of my works can be found at [${response.username}](https://github.com/${
+      response.username
     }/).
 
 `;
