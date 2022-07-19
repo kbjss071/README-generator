@@ -29,7 +29,7 @@ const questions = [
       {
         type: 'list',
         name: 'license',
-        message: 'What kind of license should your project have?',
+        message: 'What kind of license do you use for your project?',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'GNU', 'Mozilla Public', 'Eclipse', 'None'],
       },
       {
@@ -61,9 +61,8 @@ function writeToFile(fileName, data) {
     // writeFileSync: writeFileSync() is a synchronous method & creates a new file if the specified file does not exist
     // writeFile is an asynchronous method
     // path.join: this method joins the specified path segments into one path. 
-    // process.cwd: pointing currently working directory.
-    // So path.join(process.cwd, filename) will create a path to make the named file into the currently working directory.
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+    // So path.join(path name, filename) will create a path to make the named file into the currently working directory.
+    return fs.writeFileSync(path.join('./', fileName), data);
 }
 
 // Create a function to initialize app
@@ -71,7 +70,10 @@ function init() {
   inquirer.prompt(questions).then((response) => {
     // After getting response from user, generate README.md based on user's responses.
     console.log('Generating README...');
-    writeToFile('README.md', generateMarkdown({...response}));
+    // create response from user as an object
+    const res = {...response};
+    // Call writeTofile function with file named README.md and gerateMarkdown function to generate what's in the markdown file
+    writeToFile('README.md', generateMarkdown(res));
   })
 }
 
